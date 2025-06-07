@@ -1,9 +1,12 @@
-# Usar una imagen base de ASP.NET
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-WORKDIR /app
-COPY . ./
-EXPOSE 80
+# Usar una imagen base con IIS y ASP.NET Framework
+FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8 AS base
+WORKDIR /inetpub/wwwroot
 
+# Copiar los archivos de la aplicación al contenedor
+COPY . .
+
+# Exponer el puerto 80 para el servidor IIS
+EXPOSE 80
 # Crear una imagen con el SDK para compilar la aplicación
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
@@ -17,3 +20,4 @@ FROM base AS final
 WORKDIR /app
 COPY --from=build /app/build .
 ENTRYPOINT ["dotnet", "SistemaGestionEmpleadosWebForm.dll"]
+

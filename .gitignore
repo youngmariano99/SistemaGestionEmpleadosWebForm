@@ -1,0 +1,51 @@
+# Archivos de configuración de Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Archivos de compilación
+bin/
+obj/
+packages/
+project.lock.json
+project.fragment.lock.json
+
+# Configuración de publicación
+publish/
+wwwroot/
+*.Publish.xml
+
+# Archivos temporales
+*_ReSharper.*
+*.bak
+*.ncrunchsolution
+*.log
+*.cache
+Thumbs.db
+
+# Datos del IIS Express
+iisexpress/
+IIS Express/
+
+# Archivos de configuración de entidad framework
+*.edmx.sql
+*.edmx.diagram
+
+# Archivos específicos de ASP.NET Web Forms
+App_Data/
+App_Code/
+App_Start/
+Generated_Code/
+Global.asax.cs
+
+# Archivos de npm o node_modules (si usas frontend moderno)
+node_modules/
+package-lock.json
+
+# Dependencias externas
+*.dll
+*.pdb
+*.exe
+*.zip
